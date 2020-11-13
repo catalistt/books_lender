@@ -1,0 +1,7 @@
+<%= form_with url: buy_book_users_path do |f|%>
+  <div class="form-group mx-sm-3 mb-2">
+    <%= f.select :book_id, @books, class: "form-control" %>
+    <%= f.hidden_field :status, value: :buyed %>
+    <%= f.submit 'Comprar', class: "btn btn-success", data: {confirm: 'Are you sure?'} %>
+  </div>
+<% end %>

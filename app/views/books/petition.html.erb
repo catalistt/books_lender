@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-4 offset-4">
+    <h3> Solicita un libro </h3>
+    <%= form_with model: @book, url: books_path do |f|%>
+    <div class ="form-group">
+      <%= f.text_field :title, class: "form-control", placeholder: "nombre libro" %>
+    </div>
+      <%= f.hidden_field :status, value: 'requested' %>
+    <div class="form-group">
+      <%= f.submit 'Solicitar', class: "btn btn-success form-control request-book" %>
+    </div>
+    </div>
+    <% end %>
+</div>

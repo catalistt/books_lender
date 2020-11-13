@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Books</h1>
+<%= link_to 'Solicitar Libro', petition_books_path %>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Status</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @books.each do |book| %>
+    <tr>
+      <td><%= book.title %></td>
+      <td><%= book.description %></td>
+      <td><%= book.price %></td>
+      <td><%= book.status %></td>
+      <td><%= book.user %></td>
+      <td><%= link_to 'Reservar', release_users_path(book_id: book.id, status: :reserved), method: :put, class:"reserve-book" %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Book', new_book_path %>

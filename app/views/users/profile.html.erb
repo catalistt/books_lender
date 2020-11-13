@@ -1,0 +1,33 @@
+<h1>Users profile</h1>
+
+<h2>Reserved Books</h2>
+
+
+<%= link_to 'Comprar libro', buyed_books_users_path, class: "btn btn-primary" %>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Status</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @books.each do |book| %>
+      <tr>
+        <td><%= book.title %></td>
+        <td><%= book.description %></td>
+        <td><%= book.price %></td>
+        <td><%= book.status %></td>
+        <td><%= book.user %></td>
+        <td><%= link_to 'Show', book %></td>
+        <td><%= link_to 'Edit', edit_book_path(book) %></td>
+        <td><%= link_to 'Liberar', release_users_path(book_id: book.id, status: :available), method: :put, class: "reserve-book" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,7 @@
+{
+  "name": "books_lender",
+  "private": true,
+  "dependencies": {
+    "sweetalert2": "^10.9.1"
+  }
+}
